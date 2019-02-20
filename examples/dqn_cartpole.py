@@ -10,6 +10,10 @@ from tfrl.policy import BoltzmannQPolicy
 from tfrl.memory import SequentialMemory
 
 
+import tensorflow as tf
+tf.compat.v1.disable_eager_execution()
+
+
 ENV_NAME = 'CartPole-v0'
 
 
