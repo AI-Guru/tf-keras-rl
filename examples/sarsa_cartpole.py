@@ -1,12 +1,12 @@
 import numpy as np
 import gym
 
-from keras.models import Sequential
-from keras.layers import Dense, Activation, Flatten
-from keras.optimizers import Adam
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Activation, Flatten
+from tensorflow.keras.optimizers import Adam
 
-from rl.agents import SARSAAgent
-from rl.policy import BoltzmannQPolicy
+from tfrl.agents import SARSAAgent
+from tfrl.policy import BoltzmannQPolicy
 
 
 ENV_NAME = 'CartPole-v0'

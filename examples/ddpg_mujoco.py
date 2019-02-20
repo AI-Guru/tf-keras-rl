@@ -3,14 +3,14 @@ import numpy as np
 import gym
 from gym import wrappers
 
-from keras.models import Sequential, Model
-from keras.layers import Dense, Activation, Flatten, Input, Concatenate
-from keras.optimizers import Adam
+from tensorflow.keras.models import Sequential, Model
+from tensorflow.keras.layers import Dense, Activation, Flatten, Input, Concatenate
+from tensorflow.keras.optimizers import Adam
 
-from rl.processors import WhiteningNormalizerProcessor
-from rl.agents import DDPGAgent
-from rl.memory import SequentialMemory
-from rl.random import OrnsteinUhlenbeckProcess
+from tfrl.processors import WhiteningNormalizerProcessor
+from tfrl.agents import DDPGAgent
+from tfrl.memory import SequentialMemory
+from tfrl.random import OrnsteinUhlenbeckProcess
 
 
 class MujocoProcessor(WhiteningNormalizerProcessor):

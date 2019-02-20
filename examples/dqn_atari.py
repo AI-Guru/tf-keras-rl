@@ -5,16 +5,16 @@ from PIL import Image
 import numpy as np
 import gym
 
-from keras.models import Sequential
-from keras.layers import Dense, Activation, Flatten, Convolution2D, Permute
-from keras.optimizers import Adam
-import keras.backend as K
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Activation, Flatten, Convolution2D, Permute
+from tensorflow.keras.optimizers import Adam
+import tensorflow.keras.backend as K
 
-from rl.agents.dqn import DQNAgent
-from rl.policy import LinearAnnealedPolicy, BoltzmannQPolicy, EpsGreedyQPolicy
-from rl.memory import SequentialMemory
-from rl.core import Processor
-from rl.callbacks import FileLogger, ModelIntervalCheckpoint
+from tfrl.agents.dqn import DQNAgent
+from tfrl.policy import LinearAnnealedPolicy, BoltzmannQPolicy, EpsGreedyQPolicy
+from tfrl.memory import SequentialMemory
+from tfrl.core import Processor
+from tfrl.callbacks import FileLogger, ModelIntervalCheckpoint
 
 
 INPUT_SHAPE = (84, 84)

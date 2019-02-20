@@ -107,7 +107,7 @@ class DQNAgent(AbstractDQNAgent):
         # Validate (important) input.
         if hasattr(model.output, '__len__') and len(model.output) > 1:
             raise ValueError('Model "{}" has more than one output. DQN expects a model that has a single output.'.format(model))
-        if model.output._keras_shape != (None, self.nb_actions):
+        if list(model.output.shape) != list((None, self.nb_actions)):
             raise ValueError('Model output "{}" has invalid shape. DQN expects a model that has one dimension for each action, in this case {}.'.format(model.output, self.nb_actions))
 
         # Parameters.
@@ -117,7 +117,7 @@ class DQNAgent(AbstractDQNAgent):
         if self.enable_dueling_network:
             # get the second last layer of the model, abandon the last layer
             layer = model.layers[-2]
-            nb_action = model.output._keras_shape[-1]
+            nb_action = model.output.shape[-1]
             # layer y has a shape (nb_action+1,)
             # y[:,0] represents V(s;theta)
             # y[:,1:] represents A(s,a;theta)
@@ -604,9 +604,9 @@ class NAFAgent(AbstractDQNAgent):
         # Build combined model.
         a_in = Input(shape=(self.nb_actions,), name='action_input')
         if type(self.V_model.input) is list:
-            observation_shapes = [i._keras_shape[1:] for i in self.V_model.input]
+            observation_shapes = [i.shape[1:] for i in self.V_model.input]
         else:
-            observation_shapes = [self.V_model.input._keras_shape[1:]]
+            observation_shapes = [self.V_model.input.shape[1:]]
         os_in = [Input(shape=shape, name='observation_input_{}'.format(idx)) for idx, shape in enumerate(observation_shapes)]
         L_out = self.L_model([a_in] + os_in)
         V_out = self.V_model(os_in)
