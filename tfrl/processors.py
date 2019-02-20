@@ -1,14 +1,14 @@
 import numpy as np
 
-from rl.core import Processor
-from rl.util import WhiteningNormalizer
+from tfrl.core import Processor
+from tfrl.util import WhiteningNormalizer
 
 
 class MultiInputProcessor(Processor):
     """Converts observations from an environment with multiple observations for use in a neural network
     policy.
 
-    In some cases, you have environments that return multiple different observations per timestep 
+    In some cases, you have environments that return multiple different observations per timestep
     (in a robotics context, for example, a camera may be used to view the scene and a joint encoder may
     be used to report the angles for each joint). Usually, this can be handled by a policy that has
     multiple inputs, one for each modality. However, observations are returned by the environment

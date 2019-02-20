@@ -1,13 +1,13 @@
 import numpy as np
 import gym
 
-from keras.models import Sequential, Model
-from keras.layers import Dense, Activation, Flatten, Input, Concatenate
-from keras.optimizers import Adam
+from tensorflow.keras.models import Sequential, Model
+from tensorflow.keras.layers import Dense, Activation, Flatten, Input, Concatenate
+from tensorflow.keras.optimizers import Adam
 
-from rl.agents import DDPGAgent
-from rl.memory import SequentialMemory
-from rl.random import OrnsteinUhlenbeckProcess
+from tfrl.agents import DDPGAgent
+from tfrl.memory import SequentialMemory
+from tfrl.random import OrnsteinUhlenbeckProcess
 
 
 ENV_NAME = 'Pendulum-v0'

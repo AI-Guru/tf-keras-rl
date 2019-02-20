@@ -4,12 +4,12 @@ import os
 import warnings
 
 import numpy as np
-import keras.backend as K
-import keras.optimizers as optimizers
+import tensorflow.keras.backend as K
+import tensorflow.keras.optimizers as optimizers
 
-from rl.core import Agent
-from rl.random import OrnsteinUhlenbeckProcess
-from rl.util import *
+from tfrl.core import Agent
+from tfrl.random import OrnsteinUhlenbeckProcess
+from tfrl.util import *
 
 
 def mean_q(y_true, y_pred):

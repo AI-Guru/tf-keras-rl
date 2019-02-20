@@ -1,7 +1,7 @@
 # Inspired from OpenAI Baselines
 import gym
-from rl.common.vec_env.subproc_env_vec import SubprocVecEnv
-from rl.common import set_global_seeds
+from tfrl.common.vec_env.subproc_env_vec import SubprocVecEnv
+from tfrl.common import set_global_seeds
 
 
 def make_gym_env(env_id, num_env=2, seed=123, wrapper_kwargs=None, start_index=0):

@@ -1,8 +1,8 @@
 import numpy as np
 
-from keras.models import model_from_config, Sequential, Model, model_from_config
-import keras.optimizers as optimizers
-import keras.backend as K
+from tensorflow.keras.models import model_from_config, Sequential, Model, model_from_config
+import tensorflow.keras.optimizers as optimizers
+import tensorflow.keras.backend as K
 
 
 def clone_model(model, custom_objects={}):
