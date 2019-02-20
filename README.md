@@ -4,7 +4,7 @@ This is an attempt at porting Keras-RL to Tensorflow 2.0
 
 ## Example agents.
 
-- cem_cartpole.py NOT RUNNING
+- cem_cartpole.py running
 - ddpg_pendulum.py NOT RUNNING
 - dqn_cartpole.py NOT RUNNING
 - naf_pendulum.py NOT RUNNING
